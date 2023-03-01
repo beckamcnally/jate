@@ -18,12 +18,51 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+       new HtmlWebpackPlugin({
+        template: './index.html',
+        title: 'Contact Cards'
+      }),
+     
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }), 
+      new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
+        name: "Jate for Go Office",
+        short_name: "Jate",
+        description: "Text Editor called Jate",
+        background_color: "#ffeaf9",
+        theme_color: '#a28de0',
+        start_url: './',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve("src/images/logo.png"),
+            sizes:[96, 128, 192, 256, 384, 512]
+          }
+        ]
+      })
     ],
 
     module: {
       rules: [
-        
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+            },
+          },
+        },
       ],
     },
   };
