@@ -30,13 +30,15 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: "Jate for Go Office",
-        short_name: "Jate",
-        description: "Text Editor called Jate",
-        background_color: "#ffeaf9",
-        theme_color: '#a28de0',
+        name: "Just Another Text Editor",
+        short_name: "J.A.T.E",
+        description: "Takes notes with JavaScript syntax highlighting!",
+        background_color: "#225ca3",
+        theme_color: '#225ca3',
         start_url: './',
         publicPath: './',
+        orientation: "portrait",
+        display: "standalone",
         icons: [
           {
             src: path.resolve("src/images/logo.png"),
