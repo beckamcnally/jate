@@ -47,3 +47,6 @@ npm start
 * [LinkedIn](https://www.linkedin.com/in/becka-mcnally-21520670/)
 * [Github](https://github.com/beckamcnally)
 
+#Credits
+
+This project was built using starter code provided by UC Berkeley Coding Bootcamp Extension. The original starter code can be found at [https://github.com/coding-boot-camp/cautious-meme](https://github.com/coding-boot-camp/cautious-meme).
